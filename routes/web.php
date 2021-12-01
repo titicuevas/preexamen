@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::get('/prueba', function () {
+    return view('prueba');
+});
+
+Route::get('/login', [UsuariosController::class, 'loginForm']);
+Route::post('/login', [UsuariosController::class, 'login']);
+Route::post('/logout', [UsuariosController::class, 'logout']);
