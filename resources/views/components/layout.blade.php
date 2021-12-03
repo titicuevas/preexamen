@@ -27,9 +27,11 @@
                     <nav>
                         <a class="hover:text-blue-500 hover:underline @if($home) font-semibold @endif" href="/">Inicio</a> |
                         <a href="/login"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                            Login
+                            LogIn
                           </button></a>
+
                         @if (App\Http\Controllers\UsuariosController::logueado())
+                        
 
                             <a class="hover:text-blue-500 hover:underline" href="/xxxx">Logueado</a>
                         @endif
