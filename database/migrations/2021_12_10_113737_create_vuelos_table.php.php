@@ -24,6 +24,7 @@ class CreateVuelosTable extends Migration
             $table->timestamp('llegada');
             $table->decimal('plazas',3,0);
             $table->decimal('precio',8,2);
+            $table->timestamps();
 
         });
     }

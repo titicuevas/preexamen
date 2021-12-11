@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use GrahamCampbell\ResultType\Success;
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\DB;
 
 class UsuariosController extends Controller
@@ -31,6 +33,12 @@ class UsuariosController extends Controller
         }
 
         return redirect()->back()->with('error', 'Usuario o contraseña incorrectos.');
+    }
+
+    public function logout()
+    {
+        session()->forget('usuario');
+        return redirect()->back()->with('success', 'Has salido de la sesion ');
     }
 
     public static function logueado()

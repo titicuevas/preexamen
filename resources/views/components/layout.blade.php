@@ -25,15 +25,15 @@
                         $reservas = !empty($segmentos) && $segmentos[0] == 'reservas';
                     @endphp
                     <nav>
-                        <a class="hover:text-blue-500 hover:underline @if($home) font-semibold @endif" href="/">Inicio</a> |
-                        <a href="/login"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                            LogIn
-                          </button></a>
-
                         @if (App\Http\Controllers\UsuariosController::logueado())
-                        
+                            <form action="logout" method="post">
+                                @csrf
+                                <button class="bg-red-600 text-black font-bold py-2 px-4 rounded-full"><input type="submit"  value="Logout" class="hover:text-red-500 hover:underline"/></button>
+                                <button class="bg-blue-500  text-black font-bold py-2 px-4 rounded-full"><a class="hover:text-black hover:underline" href="/vuelos">Vuelos</a></button>
 
-                            <a class="hover:text-blue-500 hover:underline" href="/xxxx">Logueado</a>
+                            </form>
+                        @else
+                        <button class="bg-blue-500  text-black font-bold py-2 px-4 rounded-full"><a class="hover:text-black hover:underline" href="/login">Login</a></button>
                         @endif
                     </nav>
                 </div>
