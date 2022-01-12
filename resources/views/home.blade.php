@@ -1,3 +1,3 @@
 <x-layout>
-    Bienvenido al Aeropuerto
+    Bienvenido al Alumnos
 </x-layout>
