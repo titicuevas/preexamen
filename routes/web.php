@@ -28,15 +28,15 @@ Route::get('/prueba', function () {
 });
 Route::get('/alumnos',[AlumnosController::class,'index']);
 Route::get('/alumnos/index',[AlumnosController::class,'index']);
+Route::get('/alumnos/create',[AlumnosController::class,'create']);
+Route::post('/alumnos',[AlumnosController::class,'store'])->name('alumnos.store');
+Route::post('/alumnos{id}',[AlumnosController::class,'store'])->name('alumnos.store');
+
+
+
+
+
+
 Route::get('login', [UsuariosController::class, 'loginForm']);
 Route::post('login', [UsuariosController::class, 'login']);
 Route::post('logout', [UsuariosController::class, 'logout']);
-
-
-Route::get('vuelos',[VuelosController::class, 'viaje']);
-
-Route::post('vuelos/id',[ReservasController::class,'reservar']);
-
-Route::get('reservas', [ReservasController::class, 'reservas']);
-Route::get('reservas/{id}', [ReservasController::class, 'show']);
-Route::post('vuelos/{id}', [ReservasController::class, 'reservar']);
